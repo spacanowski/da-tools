@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if ! ISSUE_NO=$(git rev-parse --abbrev-ref HEAD | grep -o "[A-Z]\+-[0-9]\+")
+then
+    exit
+fi
+
+if [ -z "$ISSUE_NO" ]; then
+    exit
+fi
+
+echo "$ISSUE_NO $(cat $1)" > "$1"
