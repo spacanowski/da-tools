@@ -1,0 +1,21 @@
+[hub]
+	protocol = https
+
+[alias]
+	aliases = config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
+	st = status
+	co = checkout
+	cm = commit -am
+	pr = pull --rebase
+	ck = checkout
+	shlog = log --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)"
+	sth = status --short --branch
+	cmam = commit --amend --no-edit
+	prp = pull --rebase --prune
+[user]
+	name = <name>
+	email = <mail>
+[push]
+	default = simple
+[core]
+	editor = vim
